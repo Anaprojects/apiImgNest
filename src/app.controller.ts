@@ -13,19 +13,8 @@ export class AppController {
     return this.appService.getHello();
   }
   @Post()
-  async pegarVariavel(): Promise<string> {
-    try {
-      console.log("Esta guardado", MeuValor)
-      return MeuValor
-    } catch (error) {
-    console.error('Erro ao pegar o valor da variável:', error);
-    throw error;
-  }
-}
-
-}
-// async pegarImagens(@Body() dadosDaImagem: any) {
-    // console.log(dadosDaImagem)
+  async pegarImagens(@Body() dadosDaImagem: any) {
+    console.log(dadosDaImagem)
     // foreach()
     // dadosDaImagem.images.forEach(element => {
     //   console.log(element)
@@ -37,3 +26,6 @@ export class AppController {
     // });
 
     // return dadosDaImagem
+
+}
+}
