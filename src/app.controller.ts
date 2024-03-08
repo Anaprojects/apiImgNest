@@ -31,18 +31,21 @@
 // }
 
 import { Body, Controller, Get, Injectable, Post } from '@nestjs/common';
-import { AppService } from './app.service'
+import { PokemonService } from './pokemon.service';
 import { Pokemon } from './pokemon';
+import { AppService } from './app.service';
 import axios from 'axios';
 
 
 @Controller('')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService,
+    private readonly pokemonService: PokemonService) {}
 
   @Get('/pokemon')
   async getPokemon(): Promise<Pokemon[]> {
-    return await this.appService.getPokemon();
+   const response = await this.pokemonService.findAll();
+   return response.data
   }
 
   @Get('/hello')
