@@ -10,18 +10,6 @@ import { AxiosResponse } from 'axios';
 export class PokemonService {
   constructor(private readonly httpService: HttpService) {}
   findAll(): Promise<AxiosResponse<Pokemon[]>> {
-    return this.httpService.axiosRef.get('https://pokeapi.co/api/v2/pokemon/ditto');
-  // async findAll(): Promise<Pokemon[]> {
-  //   const { data } = await firstValueFrom(
-  //       //pipe é oq vai acontecer depois do meu get
-  //     this.httpService.get<Pokemon[]>('https://pokeapi.co/api/v2/pokemon/ditto').pipe(
-  //       catchError((error: AxiosError) => {
-  //         console.log(error.response.data);
-  //         throw 'An error happened!';
-  //       }),
-  //     ),
-  //   );
-  //   return data;
-  // }
+    return this.httpService.axiosRef.get('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png');
   }
 }
